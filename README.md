@@ -42,6 +42,10 @@ Coordinates are resolved from event-level `MAP/LATI/LONG`, a linked `_LOC` recor
 
 All records and facts are accessed with the current visitor’s webtrees permissions. The CSV export contains only the observations visible to that visitor. Loading the map may transmit the IP address and browser request data to the map provider enabled by the administrator.
 
+## Translations
+
+- Dutch: [@TheDutchJewel](https://github.com/TheDutchJewel)
+
 ## Credits
 
 Developed by Hermann Hartenthaler with assistance from Codex. The project was initialized from the `hh-webtrees-module-template`.
