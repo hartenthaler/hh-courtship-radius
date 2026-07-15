@@ -71,8 +71,8 @@ final class CartAnalysisService
             $marriages[] = [
                 'family_xref'        => $family->xref(),
                 'marriage_year'      => $marriageYear,
-                'first_name'         => strip_tags($husband->fullName()),
-                'second_name'        => strip_tags($wife->fullName()),
+                'first_name'         => $this->plainName($husband),
+                'second_name'        => $this->plainName($wife),
                 'blood_relationship' => $bloodRelationship,
             ];
 
@@ -138,10 +138,10 @@ final class CartAnalysisService
         return new CourtshipObservation(
             $family->xref(),
             $subject->xref(),
-            strip_tags($subject->fullName()),
+            $this->plainName($subject),
             $sex,
             $partner->xref(),
-            strip_tags($partner->fullName()),
+            $this->plainName($partner),
             $marriageYear,
             $origin,
             $destination,
@@ -160,6 +160,14 @@ final class CartAnalysisService
         }
 
         return null;
+    }
+
+    private function plainName(Individual $individual): string
+    {
+        return html_entity_decode(strip_tags(str_replace([
+            '<q class="wt-nickname">',
+            '</q>',
+        ], '"', $individual->fullName())), ENT_QUOTES);
     }
 
     private function birthPlace(Individual $individual): PlacePoint|null

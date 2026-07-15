@@ -3,6 +3,7 @@
 ## Next release
 
 - Add Dutch translations; thanks to @TheDutchJewel.
+- Preserve quotation marks around nicknames in plain-text person names.
 
 ## 0.1.1 - 2026-07-15
 
