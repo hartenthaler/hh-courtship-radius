@@ -72,8 +72,8 @@ $reasonLabels = [
             'The selected period is shown in %1$s equal intervals of %2$s years (%3$s–%4$s).',
             I18N::number($report['plan']['count']),
             I18N::number($report['plan']['width']),
-            I18N::number($report['plan']['rounded_from']),
-            I18N::number($report['plan']['rounded_to']),
+            (string) $report['plan']['rounded_from'],
+            (string) $report['plan']['rounded_to'],
         ) ?>
     </div>
 

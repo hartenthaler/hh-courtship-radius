@@ -4,6 +4,7 @@
 
 - Add Dutch translations; thanks to @TheDutchJewel.
 - Preserve quotation marks around nicknames in plain-text person names.
+- Display years without locale-specific thousands separators in the selected-period summary.
 
 ## 0.1.1 - 2026-07-15
 
