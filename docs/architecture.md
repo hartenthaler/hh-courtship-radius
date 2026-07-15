@@ -22,7 +22,7 @@ If none of these distances can be determined, the spouse is excluded from the di
 
 ## Time slices and distance statistics
 
-The requested interval is divided into five to ten equal, rounded slices. The primary courtship-radius measure is the nearest-rank 90th percentile (P90) of the distances in each slice. Additional administrator-selected percentiles, mean, median, standard deviation, and histograms supplement it.
+The requested interval is divided into five to ten equal, rounded slices. The primary courtship-radius measure is the nearest-rank 90th percentile (P90) of the distances in each slice. Additional administrator-selected percentiles, mean, standard deviation, and histograms supplement it. P50 and a separate median are deliberately omitted from the report and are not calculated.
 
 The movement map offers one reference circle for men and one for women. Each circle is centred on the most frequent birthplace among the corresponding observations. Its radius is the arithmetic mean of the non-empty time-slice P90 values in the displayed period; empty slices do not contribute to the mean.
 
