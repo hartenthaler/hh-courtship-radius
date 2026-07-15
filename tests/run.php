@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Model\PlacePoint;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Model\CourtshipObservation;
+use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\CsvService;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\DistanceService;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\ReportService;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\StatisticsService;
@@ -40,15 +41,23 @@ $assert((new DistanceService())->between(
 
 $statistics = new StatisticsService();
 $values = [1, 2, 3, 4, 100];
-$assert($statistics->percentile($values, 50.0) === 3.0, 'Nearest-rank median');
 $assert($statistics->percentile($values, 90.0) === 100.0, 'Nearest-rank P90');
-$summary = $statistics->summarize($values, [50.0, 90.0]);
+$summary = $statistics->summarize($values, [50.0, 63.0, 90.0]);
 $assert($summary['count'] === 5, 'Statistics count');
+$assert(!array_key_exists('median', $summary), 'Statistics do not calculate a median');
+$assert(!array_key_exists('50', $summary['percentiles']), 'Statistics do not calculate P50');
 $assert($summary['percentiles']['90'] === 100.0, 'Statistics P90');
 $maleHistogram = $statistics->histogram([12.0], 17.0);
 $femaleHistogram = $statistics->histogram([17.0], 17.0);
 $assert(array_column($maleHistogram, 'from') === array_column($femaleHistogram, 'from'), 'Shared histogram buckets');
 $assert(array_sum(array_column($maleHistogram, 'count')) === 1, 'Histogram includes the shared range');
+
+$csv = new CsvService();
+$assert($csv->separatorDeclaration() === "sep=;\r\n", 'CSV declares the Excel separator');
+$assert(
+    $csv->row(['Mengen; Sigmaringen, DEU', 'Name "Nickname"']) === "\"Mengen; Sigmaringen, DEU\";\"Name \"\"Nickname\"\"\"\r\n",
+    'CSV preserves commas, semicolons, and quotes inside fields',
+);
 
 $plan = (new TimeSliceService())->plan(1600, 1969);
 $assert($plan['width'] === 50, '370 years use 50-year slices');
@@ -67,7 +76,7 @@ $report = (new ReportService($statistics, new TimeSliceService()))->build([
     ['family_xref' => 'F1', 'marriage_year' => 1800, 'first_name' => 'Man', 'second_name' => 'Woman', 'blood_relationship' => 'second cousins'],
     ['family_xref' => 'F2', 'marriage_year' => 1810, 'first_name' => 'Other man', 'second_name' => 'Other woman', 'blood_relationship' => null],
     ['family_xref' => 'F3', 'marriage_year' => 1900, 'first_name' => 'Later man', 'second_name' => 'Later woman', 'blood_relationship' => 'first cousins'],
-], 1750, 1849, [50.0, 90.0], 'frequency');
+], 1750, 1849, [63.0, 90.0], 'frequency');
 $assert($report['totals']['M']['percentiles']['90'] === 30.0, 'Male P90');
 $assert($report['totals']['F']['percentiles']['90'] === 12.0, 'Female P90');
 $assert($report['cross_tables']['M']['cells']['A']['B'] === 2, 'Male cross table');

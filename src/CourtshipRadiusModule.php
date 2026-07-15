@@ -26,6 +26,7 @@ use Fisharebest\Webtrees\Http\ViewResponseTrait;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Model\CourtshipObservation;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\BloodRelationshipService;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\CartAnalysisService;
+use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\CsvService;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\DistanceService;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\PlaceResolver;
 use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\Service\ReportService;
@@ -48,7 +49,7 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
 
     private const MODULE_NAME = 'hh-courtship-radius';
     private const GITHUB_USER = 'hartenthaler';
-    private const DEFAULT_PERCENTILES = '50,63,90,95.5,99';
+    private const DEFAULT_PERCENTILES = '63,90,95.5,99';
 
     private readonly CartAnalysisService $analysisService;
     private readonly ReportService $reportService;
@@ -162,7 +163,10 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
         $report = $this->reportService->build($analysis['observations'], $analysis['marriages'], $fromYear, $toYear, $this->percentiles(), $this->crossTableSort());
 
         $stream = fopen('php://temp', 'w+');
-        fputcsv($stream, [
+        $csvService = new CsvService();
+        fwrite($stream, $csvService->separatorDeclaration());
+        fwrite($stream, $csvService->row([I18N::translate('Evaluated observations')]));
+        fwrite($stream, $csvService->row([
             MoreI18N::xlate('Family'),
             I18N::translate('Person'),
             MoreI18N::xlate('Sex'),
@@ -173,9 +177,9 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
             I18N::translate('Destination source'),
             I18N::translate('Distance (km)'),
             I18N::translate('Blood relationship'),
-        ]);
+        ]));
         foreach ($report['observations'] as $observation) {
-            fputcsv($stream, [
+            fwrite($stream, $csvService->row([
                 $observation->familyXref,
                 $observation->subjectName . ' (' . $observation->subjectXref . ')',
                 $observation->sex,
@@ -186,23 +190,22 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
                 $observation->destinationKind,
                 number_format($observation->distance, 3, '.', ''),
                 $observation->bloodRelationship ?? '',
-            ]);
+            ]));
         }
 
-        fputcsv($stream, []);
-        fputcsv($stream, [I18N::translate('Statistics by period')]);
+        fwrite($stream, $csvService->row([]));
+        fwrite($stream, $csvService->row([I18N::translate('Statistics by period')]));
         $statisticsHeader = [
             I18N::translate('Period'),
             MoreI18N::xlate('Sex'),
             I18N::translate('Persons'),
             I18N::translate('Mean'),
-            I18N::translate('Median'),
             I18N::translate('Standard deviation'),
         ];
         foreach ($this->percentiles() as $percentile) {
             $statisticsHeader[] = 'P' . $this->formatPercentile($percentile);
         }
-        fputcsv($stream, $statisticsHeader);
+        fwrite($stream, $csvService->row($statisticsHeader));
         foreach ($report['series'] as $row) {
             foreach (['M', 'F'] as $sex) {
                 $statistics = $row[$sex];
@@ -211,28 +214,27 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
                     $sex,
                     $statistics['count'],
                     $statistics['mean'] === null ? '' : number_format($statistics['mean'], 3, '.', ''),
-                    $statistics['median'] === null ? '' : number_format($statistics['median'], 3, '.', ''),
                     $statistics['standard_deviation'] === null ? '' : number_format($statistics['standard_deviation'], 3, '.', ''),
                 ];
                 foreach ($statistics['percentiles'] as $value) {
                     $csvRow[] = $value === null ? '' : number_format($value, 3, '.', '');
                 }
-                fputcsv($stream, $csvRow);
+                fwrite($stream, $csvService->row($csvRow));
             }
         }
 
         foreach (['M' => I18N::translate('Men'), 'F' => I18N::translate('Women')] as $sex => $label) {
             $table = $report['cross_tables'][$sex];
-            fputcsv($stream, []);
-            fputcsv($stream, [I18N::translate('Cross table') . ' – ' . $label]);
-            fputcsv($stream, array_merge([I18N::translate('Birth place')], $table['columns'], [MoreI18N::xlate('Total')]));
+            fwrite($stream, $csvService->row([]));
+            fwrite($stream, $csvService->row([I18N::translate('Cross table') . ' – ' . $label]));
+            fwrite($stream, $csvService->row(array_merge([I18N::translate('Birth place')], $table['columns'], [MoreI18N::xlate('Total')])));
             foreach ($table['rows'] as $rowName) {
                 $csvRow = [$rowName];
                 foreach ($table['columns'] as $columnName) {
                     $csvRow[] = $table['cells'][$rowName][$columnName] ?? 0;
                 }
                 $csvRow[] = $table['rowTotals'][$rowName];
-                fputcsv($stream, $csvRow);
+                fwrite($stream, $csvService->row($csvRow));
             }
         }
         rewind($stream);
@@ -250,7 +252,7 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
 
         return $this->viewResponse($this->name() . '::settings', [
             'title'             => $this->title(),
-            'percentiles'       => $this->getPreference('PERCENTILES', self::DEFAULT_PERCENTILES),
+            'percentiles'       => implode(',', array_map($this->formatPercentile(...), $this->percentiles())),
             'cross_table_sort'  => $this->crossTableSort(),
         ]);
     }
@@ -372,7 +374,7 @@ final class CourtshipRadiusModule extends AbstractModule implements ModuleCustom
         foreach (preg_split('/[;,\s]+/', $value) ?: [] as $part) {
             if (is_numeric($part)) {
                 $number = (float) $part;
-                if ($number > 0.0 && $number <= 100.0) {
+                if ($number > 0.0 && $number <= 100.0 && $number !== 50.0) {
                     $values[$this->formatPercentile($number)] = $number;
                 }
             }

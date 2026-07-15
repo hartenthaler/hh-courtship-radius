@@ -2,10 +2,15 @@
 
 ## Next release
 
-- Add Dutch translations; thanks to @TheDutchJewel.
-- Complete the Dutch translation; thanks to @TheDutchJewel.
+- No changes yet.
+
+## 2.2.6.0 - 2026-07-15
+
+- Add and complete the Dutch translation; thanks to @TheDutchJewel.
 - Preserve quotation marks around nicknames in plain-text person names.
 - Display years without locale-specific thousands separators in the selected-period summary.
+- Improve the spreadsheet-compatible CSV export, clarify its download label, and remove median/P50 calculations.
+- Expand the README with user guidance, screenshots, and stable navigation anchors.
 
 ## 0.1.1 - 2026-07-15
 

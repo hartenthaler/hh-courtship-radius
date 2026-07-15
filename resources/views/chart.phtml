@@ -24,7 +24,7 @@ use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\MoreI18N;
  */
 
 $format = static fn (float|null $value): string => $value === null ? '–' : I18N::number($value, 1);
-$displayPercentiles = array_values(array_filter($percentiles, static fn (float $percentile): bool => $percentile !== 50.0));
+$displayPercentiles = $percentiles;
 $percentileKey = static fn (float $percentile): string => rtrim(rtrim(number_format($percentile, 2, '.', ''), '0'), '.');
 $qualityTableId = 'courtship-radius-quality-' . bin2hex(random_bytes(4));
 $destinationLabels = [
@@ -62,7 +62,7 @@ $reasonLabels = [
             </div>
             <div class="col-sm-4">
                 <button class="btn btn-primary" type="submit"><?= MoreI18N::xlate('view') ?></button>
-                <a class="btn btn-secondary" href="<?= e($csv_url) ?>"><?= I18N::translate('Download cross table as CSV') ?></a>
+                <a class="btn btn-secondary" href="<?= e($csv_url) ?>"><?= I18N::translate('Download statistics as CSV') ?></a>
             </div>
         </div>
     </form>

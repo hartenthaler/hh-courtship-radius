@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hh-courtship-radius 0.1.0\n"
+"Project-Id-Version: hh-courtship-radius 2.2.6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-15 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -74,10 +74,6 @@ msgstr ""
 
 #: .\src\CourtshipRadiusModule.php:198 .\resources\views\chart.phtml:107
 msgid "Mean"
-msgstr ""
-
-#: .\src\CourtshipRadiusModule.php:199
-msgid "Median"
 msgstr ""
 
 #: .\src\CourtshipRadiusModule.php:200 .\resources\views\chart.phtml:107
@@ -160,7 +156,7 @@ msgid "To year"
 msgstr ""
 
 #: .\resources\views\chart.phtml:65
-msgid "Download cross table as CSV"
+msgid "Download statistics as CSV"
 msgstr ""
 
 #: .\resources\views\chart.phtml:72
@@ -296,8 +292,9 @@ msgstr ""
 
 #: .\resources\views\settings.phtml:19
 msgid ""
-"Comma-separated values from 0 to 100. Use a decimal point where needed. P90 "
-"is always included because it defines the courtship radius."
+"Comma-separated values from 0 to 100. Use a decimal point where needed. P50 "
+"is omitted because the median is not part of this report. P90 is always "
+"included because it defines the courtship radius."
 msgstr ""
 
 #: .\resources\views\settings.phtml:23

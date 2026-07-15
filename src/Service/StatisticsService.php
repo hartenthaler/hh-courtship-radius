@@ -9,18 +9,21 @@ final class StatisticsService
     /**
      * @param array<float|int> $values
      * @param array<float>     $percentiles
-     * @return array{count:int,mean:float|null,median:float|null,standard_deviation:float|null,percentiles:array<string,float|null>}
+     * @return array{count:int,mean:float|null,standard_deviation:float|null,percentiles:array<string,float|null>}
      */
     public function summarize(array $values, array $percentiles): array
     {
         $values = array_values(array_map('floatval', $values));
+        $percentiles = array_values(array_filter(
+            $percentiles,
+            static fn (float $percentile): bool => $percentile !== 50.0,
+        ));
         sort($values, SORT_NUMERIC);
         $count = count($values);
 
         $result = [
             'count'              => $count,
             'mean'               => null,
-            'median'             => null,
             'standard_deviation' => null,
             'percentiles'        => [],
         ];
@@ -40,7 +43,6 @@ final class StatisticsService
         }
 
         $result['mean']               = $mean;
-        $result['median']             = $this->percentile($values, 50.0);
         $result['standard_deviation'] = sqrt($sumOfSquaredDifferences / $count);
 
         foreach ($percentiles as $percentile) {

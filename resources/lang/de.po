@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: hh-courtship-radius 0.1.0\n"
+"Project-Id-Version: hh-courtship-radius 2.2.6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-15 15:37+0200\n"
 "PO-Revision-Date: 2026-07-15 02:00+0200\n"
@@ -77,10 +77,6 @@ msgstr "Personen"
 #: .\src\CourtshipRadiusModule.php:198 .\resources\views\chart.phtml:107
 msgid "Mean"
 msgstr "Mittelwert"
-
-#: .\src\CourtshipRadiusModule.php:199
-msgid "Median"
-msgstr "Median"
 
 #: .\src\CourtshipRadiusModule.php:200 .\resources\views\chart.phtml:107
 msgid "Standard deviation"
@@ -166,8 +162,8 @@ msgid "To year"
 msgstr "Bis Jahr"
 
 #: .\resources\views\chart.phtml:65
-msgid "Download cross table as CSV"
-msgstr "Kreuztabelle als CSV herunterladen"
+msgid "Download statistics as CSV"
+msgstr "Statistik als CSV herunterladen"
 
 #: .\resources\views\chart.phtml:72
 #, php-format
@@ -314,11 +310,13 @@ msgstr "Perzentile"
 
 #: .\resources\views\settings.phtml:19
 msgid ""
-"Comma-separated values from 0 to 100. Use a decimal point where needed. P90 "
-"is always included because it defines the courtship radius."
+"Comma-separated values from 0 to 100. Use a decimal point where needed. P50 "
+"is omitted because the median is not part of this report. P90 is always "
+"included because it defines the courtship radius."
 msgstr ""
 "Durch Kommas getrennte Werte von 0 bis 100. Verwenden Sie bei Bedarf einen "
-"Dezimalpunkt. P90 wird immer einbezogen, da es den Balzradius definiert."
+"Dezimalpunkt. P50 wird weggelassen, da der Median nicht Bestandteil dieses "
+"Berichts ist. P90 wird immer einbezogen, da es den Balzradius definiert."
 
 #: .\resources\views\settings.phtml:23
 msgid "Cross-table sorting"

@@ -16,7 +16,7 @@ use Hartenthaler\Webtrees\Module\CourtshipRadiusModule\MoreI18N;
         <label class="col-sm-3 col-form-label" for="courtship-percentiles"><?= I18N::translate('Percentiles') ?></label>
         <div class="col-sm-9">
             <input class="form-control" id="courtship-percentiles" name="percentiles" value="<?= e($percentiles) ?>" required>
-            <div class="form-text"><?= I18N::translate('Comma-separated values from 0 to 100. Use a decimal point where needed. P90 is always included because it defines the courtship radius.') ?></div>
+            <div class="form-text"><?= I18N::translate('Comma-separated values from 0 to 100. Use a decimal point where needed. P50 is omitted because the median is not part of this report. P90 is always included because it defines the courtship radius.') ?></div>
         </div>
     </div>
     <div class="row mb-3">
