@@ -1,0 +1,357 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: hh-courtship-radius 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-15 01:58+0200\n"
+"PO-Revision-Date: 2026-07-15 08:54+0200\n"
+"Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: translate;noop;plural:1,2;translateContext:2,1c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+
+#: .\src\Service\PlaceResolver.php:51
+msgid "Unknown place"
+msgstr "Onbekende plaats"
+
+#: .\src\CourtshipRadiusModule.php:75
+msgid "Courtship radius"
+msgstr "Partnerzoekradius"
+
+#: .\src\CourtshipRadiusModule.php:80
+msgid "Analyse the geographic courtship radius of selected families over time."
+msgstr ""
+"Analyseer de geografische partnerzoekradius van geselecteerde gezinnen in de "
+"tijd."
+
+#: .\src\CourtshipRadiusModule.php:156 .\resources\views\chart.phtml:131
+#: .\resources\views\chart.phtml:142
+msgid "Family"
+msgstr "Gezin"
+
+#: .\src\CourtshipRadiusModule.php:157 .\resources\views\chart.phtml:142
+#: .\resources\views\chart.phtml:149
+msgid "Person"
+msgstr "Persoon"
+
+#: .\src\CourtshipRadiusModule.php:158 .\src\CourtshipRadiusModule.php:186
+msgid "Sex"
+msgstr "Geslacht"
+
+#: .\src\CourtshipRadiusModule.php:159
+msgid "Partner"
+msgstr "Partner"
+
+#: .\src\CourtshipRadiusModule.php:160 .\resources\views\chart.phtml:149
+msgid "Marriage year"
+msgstr "Huwelijksjaar"
+
+#: .\src\CourtshipRadiusModule.php:161 .\src\CourtshipRadiusModule.php:218
+#: .\resources\views\chart.phtml:149 .\resources\views\cross-table.phtml:14
+msgid "Birth place"
+msgstr "Geboorteplaats"
+
+#: .\src\CourtshipRadiusModule.php:162 .\resources\views\chart.phtml:149
+msgid "Destination"
+msgstr "Bestemming"
+
+#: .\src\CourtshipRadiusModule.php:163
+msgid "Destination source"
+msgstr "Bron van de bestemming"
+
+#: .\src\CourtshipRadiusModule.php:164
+msgid "Distance (km)"
+msgstr "Afstand (km)"
+
+#: .\src\CourtshipRadiusModule.php:165
+msgid "Blood relationship"
+msgstr "Bloedverwantschap"
+
+#: .\src\CourtshipRadiusModule.php:183
+msgid "Statistics by period"
+msgstr "Statistieken per periode"
+
+#: .\src\CourtshipRadiusModule.php:185 .\resources\views\chart.phtml:84
+msgid "Period"
+msgstr "Periode"
+
+#: .\src\CourtshipRadiusModule.php:187 .\resources\views\chart.phtml:85
+#: .\resources\views\chart.phtml:100
+msgid "Persons"
+msgstr "Personen"
+
+#: .\src\CourtshipRadiusModule.php:188 .\resources\views\chart.phtml:100
+msgid "Mean"
+msgstr "Gemiddelde"
+
+#: .\src\CourtshipRadiusModule.php:189 .\resources\views\chart.phtml:100
+msgid "Median"
+msgstr "Mediaan"
+
+#: .\src\CourtshipRadiusModule.php:190 .\resources\views\chart.phtml:100
+msgid "Standard deviation"
+msgstr "Standaardafwijking"
+
+#: .\src\CourtshipRadiusModule.php:214 .\resources\views\chart.phtml:84
+#: .\resources\views\chart.phtml:102 .\resources\views\chart.phtml:115
+#: .\resources\views\histograms.phtml:10 .\resources\views\time-series.phtml:65
+msgid "Men"
+msgstr "Mannen"
+
+#: .\src\CourtshipRadiusModule.php:214 .\resources\views\chart.phtml:84
+#: .\resources\views\chart.phtml:102 .\resources\views\chart.phtml:115
+#: .\resources\views\histograms.phtml:10 .\resources\views\time-series.phtml:66
+msgid "Women"
+msgstr "Vrouwen"
+
+#: .\src\CourtshipRadiusModule.php:217
+msgid "Cross table"
+msgstr "Kruistabel"
+
+#: .\src\CourtshipRadiusModule.php:218 .\resources\views\cross-table.phtml:14
+#: .\resources\views\cross-table.phtml:17
+msgid "Total"
+msgstr "Totaal"
+
+#: .\src\CourtshipRadiusModule.php:259
+#, php-format
+msgid "The preferences for the module “%s” have been updated."
+msgstr "De voorkeuren voor de module “%s” zijn bijgewerkt."
+
+#: .\src\CourtshipRadiusModule.php:276
+msgid "IP address, browser data, requested map area"
+msgstr "IP-adres, browsergegevens, opgevraagd kaartgebied"
+
+#: .\src\CourtshipRadiusModule.php:277
+msgid ""
+"This module uses the map provider enabled in webtrees to display places and "
+"movement routes."
+msgstr ""
+"Deze module gebruikt de in webtrees ingeschakelde kaartaanbieder om plaatsen "
+"en verplaatsingsroutes weer te geven."
+
+#: .\resources\views\chart.phtml:24
+msgid "Partner’s residence at marriage"
+msgstr "Woonplaats van de partner bij het huwelijk"
+
+#: .\resources\views\chart.phtml:25
+msgid "Marriage place"
+msgstr "Huwelijksplaats"
+
+#: .\resources\views\chart.phtml:26
+msgid "Partner’s birth place"
+msgstr "Geboorteplaats van de partner"
+
+#: .\resources\views\chart.phtml:29
+msgid "Neither partner is present as an individual in the Clippings Cart"
+msgstr "Geen van beide partners is als persoon aanwezig in de Stamboomknipsels"
+
+#: .\resources\views\chart.phtml:30
+msgid "No usable marriage date"
+msgstr "Geen bruikbare huwelijksdatum"
+
+#: .\resources\views\chart.phtml:31
+msgid "A partner is missing or private"
+msgstr "Een partner ontbreekt of is afgeschermd"
+
+#: .\resources\views\chart.phtml:32
+msgid "Sex is neither male nor female"
+msgstr "Het geslacht is noch mannelijk noch vrouwelijk"
+
+#: .\resources\views\chart.phtml:33
+msgid "Birth place has no coordinates"
+msgstr "De geboorteplaats heeft geen coördinaten"
+
+#: .\resources\views\chart.phtml:34
+msgid "No destination with coordinates"
+msgstr "Geen bestemming met coördinaten"
+
+#: .\resources\views\chart.phtml:41
+msgid ""
+"First add the families and individuals to be analysed to the Clippings Cart."
+msgstr ""
+"Voeg eerst de te analyseren gezinnen en personen toe aan de Stamboomknipsels."
+
+#: .\resources\views\chart.phtml:49
+msgid "From year"
+msgstr "Van jaar"
+
+#: .\resources\views\chart.phtml:53
+msgid "To year"
+msgstr "Tot jaar"
+
+#: .\resources\views\chart.phtml:57
+msgid "view"
+msgstr "weergeven"
+
+#: .\resources\views\chart.phtml:58
+msgid "Download CSV"
+msgstr "CSV downloaden"
+
+#: .\resources\views\chart.phtml:65
+#, php-format
+msgid ""
+"The selected period is shown in %1$s equal intervals of %2$s years (%3$s–"
+"%4$s)."
+msgstr ""
+"De geselecteerde periode wordt weergegeven in %1$s gelijke intervallen van "
+"%2$s jaar (%3$s–%4$s)."
+
+#: .\resources\views\chart.phtml:74
+msgid "There are no evaluable observations in the selected period."
+msgstr "Er zijn geen bruikbare waarnemingen in de geselecteerde periode."
+
+#: .\resources\views\chart.phtml:77 .\resources\views\time-series.phtml:32
+msgid "Courtship radius over time"
+msgstr "Partnerzoekradius in de tijd"
+
+#: .\resources\views\chart.phtml:78
+msgid ""
+"The courtship radius is the distance at or below which 90 percent of all "
+"evaluated distances lie."
+msgstr ""
+"De partnerzoekradius is de afstand waarbinnen 90 procent van alle "
+"geëvalueerde afstanden ligt."
+
+#: .\resources\views\chart.phtml:85
+msgid "Courtship radius (P90)"
+msgstr "Partnerzoekradius (P90)"
+
+#: .\resources\views\chart.phtml:97
+msgid "Statistics for the selected period"
+msgstr "Statistieken voor de geselecteerde periode"
+
+#: .\resources\views\chart.phtml:100
+msgid "Group"
+msgstr "Groep"
+
+#: .\resources\views\chart.phtml:113
+msgid "Birth place × destination"
+msgstr "Geboorteplaats × bestemming"
+
+#: .\resources\views\chart.phtml:114
+msgid "Each cell contains the number of evaluated persons."
+msgstr "Elke cel bevat het aantal geëvalueerde personen."
+
+#: .\resources\views\chart.phtml:122
+msgid "Movement map"
+msgstr "Verplaatsingskaart"
+
+#: .\resources\views\chart.phtml:127
+msgid "Blood-related spouses"
+msgstr "Bloedverwante echtgenoten"
+
+#: .\resources\views\chart.phtml:129
+msgid "No blood relationship was found for the evaluated couples."
+msgstr "Voor de geëvalueerde paren werd geen bloedverwantschap gevonden."
+
+#: .\resources\views\chart.phtml:131
+msgid "Couple"
+msgstr "Paar"
+
+#: .\resources\views\chart.phtml:131
+msgid "Nearest blood relationship"
+msgstr "Nauwste bloedverwantschap"
+
+#: .\resources\views\chart.phtml:139
+msgid "Data quality"
+msgstr "Gegevenskwaliteit"
+
+#: .\resources\views\chart.phtml:140
+#, php-format
+msgid ""
+"%1$s families and %2$s individuals were selected; %3$s observations are "
+"evaluable and %4$s cases were excluded."
+msgstr ""
+"%1$s gezinnen en %2$s personen werden geselecteerd; %3$s waarnemingen zijn "
+"bruikbaar en %4$s gevallen werden uitgesloten."
+
+#: .\resources\views\chart.phtml:142
+msgid "Reason"
+msgstr "Reden"
+
+#: .\resources\views\chart.phtml:148
+msgid "Evaluated observations"
+msgstr "Geëvalueerde waarnemingen"
+
+#: .\resources\views\chart.phtml:149
+msgid "Source"
+msgstr "Bron"
+
+#: .\resources\views\chart.phtml:149
+msgid "Distance"
+msgstr "Afstand"
+
+#: .\resources\views\cross-table.phtml:10
+msgid "Nothing to show"
+msgstr "Niets weer te geven"
+
+#: .\resources\views\histograms.phtml:13
+msgid "Distribution"
+msgstr "Verdeling"
+
+#: .\resources\views\map.phtml:14
+msgid "Reference circle"
+msgstr "Referentiecirkel"
+
+#: .\resources\views\map.phtml:15
+msgid "Men’s P90 circle"
+msgstr "P90-cirkel van mannen"
+
+#: .\resources\views\map.phtml:16
+msgid "Women’s P90 circle"
+msgstr "P90-cirkel van vrouwen"
+
+#: .\resources\views\map.phtml:17
+msgid "Remove circle"
+msgstr "Cirkel verwijderen"
+
+#: .\resources\views\map.phtml:20
+msgid ""
+"Blue routes represent men; pink routes represent women. The line width and "
+"number show the number of persons. Select a P90 circle and then click its "
+"reference point on the map."
+msgstr ""
+"Blauwe routes vertegenwoordigen mannen; roze routes vertegenwoordigen "
+"vrouwen. De lijnbreedte en het getal tonen het aantal personen. Selecteer "
+"een P90-cirkel en klik vervolgens op het referentiepunt ervan op de kaart."
+
+#: .\resources\views\settings.phtml:15
+msgid "Percentiles"
+msgstr "Percentielen"
+
+#: .\resources\views\settings.phtml:18
+msgid ""
+"Comma-separated values from 0 to 100. Use a decimal point where needed. P90 "
+"is always included because it defines the courtship radius."
+msgstr ""
+"Door komma's gescheiden waarden van 0 tot 100. Gebruik zo nodig een decimaal "
+"punt. P90 wordt altijd opgenomen omdat deze de partnerzoekradius definieert."
+
+#: .\resources\views\settings.phtml:22
+msgid "Cross-table sorting"
+msgstr "Sortering van de kruistabel"
+
+#: .\resources\views\settings.phtml:25
+msgid "By frequency"
+msgstr "Op frequentie"
+
+#: .\resources\views\settings.phtml:26
+msgid "Alphabetical"
+msgstr "Alfabetisch"
+
+#: .\resources\views\settings.phtml:30
+msgid "save"
+msgstr "opslaan"
+
+#: .\resources\views\time-series.phtml:67
+msgid "Kilometres (P90)"
+msgstr "Kilometers (P90)"
