@@ -167,7 +167,7 @@ msgstr "Tot jaar"
 
 #: .\resources\views\chart.phtml:65
 msgid "Download cross table as CSV"
-msgstr ""
+msgstr "Kruistabel als CSV downloaden"
 
 #: .\resources\views\chart.phtml:72
 #, php-format
@@ -208,7 +208,7 @@ msgstr "Groep"
 
 #: .\resources\views\chart.phtml:120
 msgid "Birth place × marriage place"
-msgstr ""
+msgstr "Geboorteplaats × huwelijksplaats"
 
 #: .\resources\views\chart.phtml:121
 msgid "Each cell contains the number of evaluated persons."
@@ -229,13 +229,15 @@ msgstr "Voor de geëvalueerde paren werd geen bloedverwantschap gevonden."
 #: .\resources\views\chart.phtml:142
 #, php-format
 msgid "The estimated <strong>consanguinity rate</strong> is %s."
-msgstr ""
+msgstr "Het geschatte <strong>bloedverwantschapspercentage</strong> is %s."
 
 #: .\resources\views\chart.phtml:145
 msgid ""
 "The figure is calculated by dividing the number of marriages between blood "
 "relatives by the total number of marriages present."
 msgstr ""
+"Dit percentage wordt berekend door het aantal huwelijken tussen "
+"bloedverwanten te delen door het totale aantal aanwezige huwelijken."
 
 #: .\resources\views\chart.phtml:147
 msgid "Couple"
@@ -260,7 +262,7 @@ msgstr ""
 
 #: .\resources\views\chart.phtml:159
 msgid "Excluded cases"
-msgstr ""
+msgstr "Uitgesloten gevallen"
 
 #: .\resources\views\chart.phtml:163
 msgid "Reason"
@@ -276,7 +278,7 @@ msgstr "Afstand"
 
 #: .\resources\views\histograms.phtml:16
 msgid "Men/Women – Distribution"
-msgstr ""
+msgstr "Mannen/vrouwen – Verdeling"
 
 #: .\resources\views\map.phtml:14
 msgid "Reference circle"
@@ -301,6 +303,11 @@ msgid ""
 "frequent birth place for that group; its radius is the mean of the available "
 "time-slice P90 values."
 msgstr ""
+"Blauwe routes vertegenwoordigen mannen; roze routes vertegenwoordigen "
+"vrouwen. De lijnbreedte en het getal tonen het aantal personen. Elke P90-"
+"cirkel is gecentreerd op de meest voorkomende geboorteplaats van de "
+"betreffende groep; de straal ervan is het gemiddelde van de beschikbare P90-"
+"waarden van de tijdsintervallen."
 
 #: .\resources\views\settings.phtml:16
 msgid "Percentiles"
@@ -328,4 +335,4 @@ msgstr "Alfabetisch"
 
 #: .\resources\views\time-series.phtml:69
 msgid "Courtship radius (P90) / km"
-msgstr ""
+msgstr "Partnerzoekradius (P90) / km"
