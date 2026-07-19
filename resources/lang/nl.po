@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: hh-courtship-radius 2.2.6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-15 15:37+0200\n"
-"PO-Revision-Date: 2026-07-15 08:54+0200\n"
+"PO-Revision-Date: 2026-07-15 21:34+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -163,7 +163,7 @@ msgstr "Tot jaar"
 
 #: .\resources\views\chart.phtml:65
 msgid "Download statistics as CSV"
-msgstr ""
+msgstr "Statistieken als CSV downloaden"
 
 #: .\resources\views\chart.phtml:72
 #, php-format
@@ -315,6 +315,9 @@ msgid ""
 "is omitted because the median is not part of this report. P90 is always "
 "included because it defines the courtship radius."
 msgstr ""
+"Door komma's gescheiden waarden van 0 tot 100. Gebruik zo nodig een decimaal "
+"punt. P50 wordt weggelaten omdat de mediaan geen onderdeel van dit rapport "
+"is. P90 wordt altijd opgenomen omdat deze de partnerzoekradius definieert."
 
 #: .\resources\views\settings.phtml:23
 msgid "Cross-table sorting"
