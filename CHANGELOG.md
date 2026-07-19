@@ -2,7 +2,7 @@
 
 ## Next release
 
-- No changes yet.
+- Update Dutch translations; thanks to @TheDutchJewel.
 
 ## 2.2.6.0 - 2026-07-15
 
